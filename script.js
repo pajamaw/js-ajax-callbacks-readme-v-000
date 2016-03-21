@@ -7,4 +7,11 @@ $(document).ready(function(){
     // insert the response
     $("#sentences").html(response);
   });
+
+  $.get("this_doesnt_exist.html", function(data) {
+  // This will not be called because the .html file request doesn't exist
+}).fail(function(error) {
+  // This is called when an error occurs
+  console.log('Something went wrong: ' + error);
+});
 });
